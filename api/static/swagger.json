@@ -1,0 +1,122 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "sean",
+        "version": "1.0.0",
+        "title": "Seans-Python3-Flask-Rest-Boilerplate",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "servers": [
+        {
+            "url": "/"
+        }
+    ],
+    "tags": [
+        {
+            "name": "All job ads",
+            "description": "Example API for requesting and return all job ads"
+        }
+    ],
+    "paths": {
+        "/request": {
+            "get": {
+                "tags": [
+                    "Job ads Request"
+                ],
+                "summary": "Returns job ads",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/request/job_address/{job_address}": {
+            "parameters": [
+                {
+                    "name": "job_address",
+                    "in": "path",
+                    "required": true,
+                    "description": "address of job we want to match",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Job ads Request"
+                ],
+                "summary": "Returns job ads with given address",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. job ad not found."
+                    }
+                }
+            }
+        },
+        "/request/employer_name/{employer_name}": {
+            "parameters": [
+                {
+                    "name": "employer_name",
+                    "in": "path",
+                    "required": true,
+                    "description": "employer name of job we want to match",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Job ads Request"
+                ],
+                "summary": "Returns job ads with given employer name",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. job ad not found."
+                    }
+                }
+            }
+        },
+        "/request/publishing_date/{publishing_date}": {
+            "parameters": [
+                {
+                    "name": "publishing_date",
+                    "in": "path",
+                    "required": true,
+                    "description": "jobs published on exact date",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Job ads Request"
+                ],
+                "summary": "Returns job ads with given publishing date",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. job ad not found."
+                    }
+                }
+            }
+        }
+    }
+}
